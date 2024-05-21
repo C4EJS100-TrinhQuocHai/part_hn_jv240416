@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        Các nội dung học
+        1. có 3 cách để làm việc với JS
+         + inline
+            viết trực tiếp vào element
+         + internal
+            viết code js bên trong cặp thẻ <script/>
+            vị trí đặt cặp thẻ script ở cuối cùng của phần body
+         + external
+            tạo 1 file có đuôi.js sau đó link file js vào trong html
+            <script src="đường dẫn đến file js"/>
+
+        . Cách khai báo biến
+            Có 3 cách để dùng từ khóa khai báo biến
+            1. const
+              + dùng để khai báo hằng số
+              + không thay đổi giá trị được
+              + khi khai báo bắt buộc phải gán giá trị cho nó
+              + phạm vi block-scope
+              + có hoisting nhưng không truy cập được
+              + hoisting là gì?
+                việc đưa khai báo biến lên đầu.
+            2. let
+              + khi khai báo không cần thiết phải gán giá trị
+              + có thể thay đổi giá trị được
+              + không thể khai báo lại được
+              + phạm vi hoạt động là block-scope
+              + có hoisting nhưng không truy cập được
+
+            3. var
+              + khi khai báo không cần thiết phải gán giá trị
+              + có thể gán lại giá trị
+              + có thể khai báo lại
+              + phạm vi hoạt động function
+              + có hoisting và truy cập được
+
+              **************************
+              tên biến :
+              quy tắc đặt tên biến
+                + thường đặt theo quy tắc camel-case
+                + đặt tên có ý nghĩa
+                + không được đặt trùng từ khóa đặc biệt(let, var, const,class,try,catch...)
+                + không được đặt từ khóa đầu tiên là số,các kí tự  (trừ $,_)
+        . Các kiểu dữ liệu
+          chia thành 2 nhóm kiểu dữ liệu chính
+          + 1 kiểu đơn giản - primitive type - kiểu tham trị
+            gồm có các kiểu dữ liệu sau
+            + number
+            + string
+            + null
+            + undefined
+            + NaN (not a Number)
+            + boolean - kiểu đúng sai
+
+          + 2 kiểu phức tạp - reference type - kiểu tham chiếu
+            + array
+            + function
+            + object
+        . Toán tử
+            1. toán tử số học
+             +,-,*,/,**(số mũ),%(chia lấy dư)
+            2. toán tử gán =
+            3. toán tử logic &&,||,!
+            4. toán tử so sánh 
+             ==,===,>,<,!==,!=,......
+            5. toán tử 3 ngôi .  ? : 
+            6. toán tử  nullish ?
+            7. toán tử tăng giảm a++ ; ++a
+        . Các hàm built-in- các hàm có sẵn
+         + alert(): hiển thị hộp thoại thông báo ra màn hình
+         + console.log(""): thông báo ra màn hình console
+         + prompt(): hiển thị ô cho người dùng nhập
+         + confirm(): hiển thị xác nhận
+         + document.write(): hiển thị ra trình duyệt.
+     -->
+        
+      <script>
+        document.write("hello!")
+      </script>
+      
+</body>
+</html>
