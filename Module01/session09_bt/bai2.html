@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            phân tích đề:
+            viết một chuỗi giá trị số: 
+            nếu 2 giá trị số chẵn liền kề nhau thì thêm giấu - ở giữa
+           VD input:  245468 
+              output: 2-454-6-8
+
+              Các bước làm đưa về mảng dùng split()
+              dùng for để duyệt từng phần tử trong mảng
+              đi kiểm tra 2 phần tử liền kề nhau có phải là số chẵn hay không
+              nếu phải thì thêm dấu "-" ở giữa
+        */
+            let text ="245468";
+            // for (let i = 0; i < text.length; i++) {
+            //     console.log("giá trị text",text[i]);
+            // }
+            let convert= text.split("");
+            //[2,4,5,4,6,8]
+            // console.log("convert",convert);
+        
+            for (let i = 0; i < convert.length; i++) {
+                if(convert[i]%2===0 && convert[i+1]%2===0){
+                    convert.splice(i+1,0,"-");
+                }
+            }
+            console.log(1111111,convert.join(""));
+            // console.log("kết quả",result);
+            // let a=6;
+            //  a=a+7   // a+=7
+    </script>
+</body>
+</html>

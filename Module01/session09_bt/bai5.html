@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // sắp xếp
+        // từ bé đến lớn 
+        let numbers = [4, 5, 8, 7, 9, 6, 5, 41, 2, 6, 55, 1, 8];
+        /* 
+           [7, 5, 8, 7, 9, 6, 5, 41, 3, 6,2, 55, 1, 8];
+           ....
+             [5, 7, 8, 7, 9, 6, 5, 41, 3, 6,2, 55, 1, 8];
+             ....
+             [3,5,7, 8, 7, 9, 6, 5, 41, 5, 6,2, 55, 1, 8];
+
+         */
+        let count = 0;
+        // đếm xem bao nhiêu vòng for xử lý
+        for (let i = 0; i < 12; i++) {
+            for (let j =  i+1; j < 13; j++) {
+                count++;
+                if (numbers[i] > numbers[j]) {
+                   let temp = numbers[i];
+                    numbers[i] = numbers[j];
+                    numbers[j] = temp;
+                }
+            }
+        }
+        console.log("giá trị count", count);
+        console.log('Kết quả là :' + numbers);
+        let arr = [5, 6];
+        let temp = arr[0];
+        arr[0] = arr[1];
+        arr[1] = temp;
+
+    </script>
+</body>
+
+
+</html>

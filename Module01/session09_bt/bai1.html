@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        /* 
+            Bài 1: Viết một chương trình để in các ký tự trong
+            một mảng theo thứ tự đảo ngược.
+            nếu một mảng chứa các ký tự [ "1","2","3","4","5" ].
+            sau khi thực hiện đảo ngược sẽ là "54321".
+            javascript cung cấp phương thức reverse(). giúp đảo ngược mảng
+            split(): chuyển text thành mảng
+            join() : chuyển mảng thành text
+        */
+        let arr = ["t", "h", "a", "o"];
+        console.log(111111, arr.reverse().join(""));
+
+        let students = [
+            {
+                name: "thu",
+                id: 112,
+                address: "hà nội",
+                age:25
+            },
+            {
+                name: "thành",
+                id: 113,
+                address: "hà nam",
+                age:20
+            },
+            {
+                name: "ngọc",
+                id: 114,
+                address: "hcm",
+                age:16
+            }
+        ]
+        // lấy ra những sinh viên có tuổi lớn hơn 18
+        let check=[];
+        for (let i = 0; i < students.length; i++) {
+                if(students[i].age>18){
+                    check.push(students[i]);
+                }
+        }
+        // console.log("thông tin những user có tuổi lớn hơn 18",check);
+        let result= students.filter((item)=>item.age>18);
+        console.log("thông tin những user có tuổi lớn hơn 18", result);
+        /* 
+         hello world!
+         CRUD 
+         */
+    </script>
+</body>
+
+</html>

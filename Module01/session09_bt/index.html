@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        /* 
+            khi làm 1 bài toán đọc phân  tích đề xem đề yêu cầu như thế nào?
+            suy nghĩ hướng làm?
+            ra kết quả? 
+            ==> đi test -case
+            input: Keep Calm And Code On
+            output : kEEP cALM aND cODE oN
+            input :  riKei aCaDemy
+            output:  RIkEI AcAdEMY
+
+            Phương thức split(): dùng để chuyển text sang dạng array.
+         */
+          
+          let text  ="Keep Calm And Code On";
+        //   console.log(111111111111111,text.split(" "));
+            // let string = prompt("Nhập vào 1 chuỗi chữ cái:");
+            let string1 = text.split('');
+            console.log(string1);
+            /* 
+                [K, e, e, 'p', ' ',' ', 'C', 'a', 'l', 'm', ' ', 'A', 'n', 
+                'd', ' ', 'C', 'o', 'd', 'e', ' ', 'O', 'n']
+             */
+
+
+            for (let i = 0; i < string1.length; i++) {
+                    // console.log(typeof string1[i]);
+                let j = string1[i]; //  K
+                
+                if (j === j.toLowerCase()) {
+                    j = j.toUpperCase();
+                    j.toUpperCase()
+                            // string1.splice(i,1,j.toUpperCase());
+                 } else {
+                            // string1.splice(i,1,j.toLowerCase());
+                     j=j.toLowerCase();
+                     //j=k 
+                }
+            }
+            document.write(string1.join(''));
+            /* 
+             */
+            let a=5;// khai báo a
+            let b=a;// khai b gán a cho b
+            a=8;    // thay đổi a
+            console.log("b",b);// in ra b
+            let arr1=[2,3];// khai báo mảng arr1
+            let arr2=arr1; //  khai arr2 gán a11 cho arr2
+            arr1[0]=5;     //  thay đổi aa1
+            console.log("arr2",arr2);// in ra arr2
+    </script>
+</body>
+</html>
