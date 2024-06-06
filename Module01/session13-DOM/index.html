@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .header{
+            color: red;
+        }
+        p{
+            background-color: green;
+        }
+        #paragraph{
+            color: yellow;
+        }
+        .param{
+            font-size: 50px;
+        }
+        .content1{
+            color: tomato;
+        }
+        .list{
+            background-color: violet;
+        }
+        .content{
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+    <h1>hello</h1>
+    <p id="paragraph" class="param"> lấy element bằng id .</p>
+    <div class="heading">học lập trình javascript!</div>
+    <div class="query">
+       get element by query selector 1
+    </div>
+    <div class="query">
+        get element by query selector 2
+    </div>
+    <span class="heading">java140624</span>
+    <a href="">about</a>
+    <div class="container">
+        dom basic
+        <div>
+            hello
+        </div>
+    </div>
+    <div class="content toggle " id="text"> content </div>
+    <div class="text">
+        
+    </div>
+    <button onclick="handleClick()">bấm </button>
+    <!-- 
+        DOM là gì? document object model  -mô hình tài liệu dạng đối tượng.
+        DOM tạo ra khi nào? khi trang web được tải lên thì trình duyệt sẽ tạo ra 
+        mô hình DOM.Từ mô hình dom này chúng ta có thể:
+        -thay đổi nội dung text
+        -thay đổi màu sắc
+        -thay đổi các attribute
+        -thay đổi các element
+        -làm các hiệu ứng.....
+        *******************
+        Các thành phần trong DOM
+        1.element-tên các thẻ tag trong html
+            Các cách để lấy element trong DOM
+            NHỚ CÚ PHÁP ĐỂ LẤY VÀ KẾT QUẢ TRẢ VỀ LÀ Gì?
+            1.lấy theo tên thẻ 
+            document.getElementsByTagName("h1")
+            kết quả trả về : HTML collection dạng mảng.[h1]
+            truy cập phần tử của mảng.
+            2.lấy theo id : định danh cho element giống như cccd
+            document.getElementById("");
+            kết quả trả về : đối tượng (element );
+            3.lấy theo class:
+            document.getElementsByClassName("heading");
+            kết quả trả về : HTML collection dạng mảng.
+            4.query Selector
+            (css: CÁC BỘ CHỌN SELECTOR)
+            document.querySelector()
+            kết quả trả về : một đối tượng (element)
+            không có element nào thỏa mãn thì trả về null.
+            5.query SelectorAll
+             document.querySelectorAll
+            kết quả trả về : Nodelist dạng mảng.
+
+        2.attribute-tên thuộc tính: vd: class, href, src, target, id, 
+         setAttribute(name,value);
+         getAttribute();
+         classList: lấy ra danh sách class
+                  Cung cấp các phương thức
+                  1.add (thêm class)
+                  2.remove (xóa class)
+                  3.contains( kiểm tra xem có class đó không-true/false)
+                  4.toggle (công tắc: có thì xóa đi không có thì thêm vào)
+
+        3.text : phần nội dung thẻ
+                 1. textContent
+                 2. innerHTML
+     -->
+     <script>
+            
+            let students=["hoa","hồng"];
+            students[1];
+            document.getElementsByTagName("h1")[0];
+            let getElementById= document.getElementById("paragraph");
+            // console.log("getElementById", getElementById);
+            let getElementByClassName=document.getElementsByClassName("heading")[0];
+            // console.log("getElementByClassName", getElementByClassName);
+            let getElementByQueRySeletor= document.querySelector(".query");
+            // console.log("getElementByQueRySeletor", getElementByQueRySeletor);
+            let getElementByQueRySeletorAll=document.querySelectorAll(".query");
+            // console.log("getElementByQueRySeletorAll", getElementByQueRySeletorAll[1]);
+            // let content= document.getElementsByClassName("content")[0].setAttribute("class","content1")
+            let content = document.getElementsByClassName("content")[0].getAttribute("id");
+            // console.log("content11111",content);
+            let classList1= document.getElementById("text").classList;
+            classList1.add("list");
+            // classList1.remove("content");
+            let check= classList1.contains("content");
+            // console.log("check",check);
+            // console.log("classList",classList);
+            document.getElementsByClassName("text")[0].innerHTML="<h1>thu<h1/>";
+            function handleClick() {
+                classList1.toggle("content");
+            }
+     </script>
+</body>
+</html>

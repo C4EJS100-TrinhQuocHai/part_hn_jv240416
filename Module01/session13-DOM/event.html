@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .style:hover {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+        event là những sự kiện tương tác
+        sự kiện dùng chuột click,bàn phím (enter),phím mũi tên lên xuống, trái,phải
+        sự kiện nhập ô input.....
+     -->
+    <button class="style" onclick="sayHello()">bấm</button><br>
+    <label for="">email</label>
+    <input oninput="changeEmail()" type="text" id="email"><br>
+    <label for="">pass</label>
+    <input type="text"><br>
+    <button>login</button>
+    <script>
+        function sayHello() {
+            alert("xin chào!")
+        }
+        let student={
+            name:"hoa"
+        }
+        function changeEmail() {
+           console.log("giá trị người dùng nhập", document.getElementById("email").value);
+        }
+    </script>
+</body>
+
+</html>
