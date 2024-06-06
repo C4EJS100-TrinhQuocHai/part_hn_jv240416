@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- 
+        localstorage:
+        -dịch vụ của trình duyệt web cung cấp cho phép mình lưu trữ dữ liệu
+        -dung lượng lưu trữ tầm 5MB 
+         1mb=1024kb
+        - Cách lưu trữ:
+            localStorage.setItem(key,value);
+            khi lưu xong dữ liệu sẽ không bị mất đi (tắt máy, tắt trình duyệt thì dữ
+            liệu nó vẫn còn)
+            -đối với mảng và object khi lưu phải chuyển sang định dạng JSON
+        - Cách lấy về:
+            localStorage.getItem(tên_key)
+        - Xóa
+            xóa 1:
+                localStorage.removeItem(tên_key)
+            xóa hết:
+                localStorage.clear()
+
+     -->
+         <script>
+            // localStorage.setItem("age",20);
+            // let name= localStorage.getItem("namee");
+            // console.log("name",name);
+            // localStorage.removeItem("name");
+            let age=5;
+            let numbers=[3,4,5];
+            // khi lưu phải chuyển sang định dạng JSON
+            // localStorage.setItem("number",age)
+            // let result= localStorage.setItem("number",JSON.stringify(numbers));
+            // khi lấy về thì phải parse ra.
+            let myArr= JSON.parse(localStorage.getItem("numbers"));
+            let student={
+                name:"hoa",
+                id:1
+            }
+            // localStorage.setItem("name",JSON.stringify(student));
+            // let flag=0;
+            // localStorage.setItem("flag",flag);
+            // console.log(1111,typeof(localStorage.getItem("flag")));
+            let vietHa= JSON.parse(localStorage.getItem("number"));
+            console.log(11111,vietHa);
+            
+           
+         </script>
+</body>
+</html>

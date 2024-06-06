@@ -8,7 +8,6 @@
 </head>
 
 <body>
-
     <input placeholder="mời nhập công việc" id="job" type="text">
     <button onclick="addJob()">add job</button>
     <!-- 
@@ -21,10 +20,9 @@
      B4. khởi tạo đối tượng công việc bao gồm các thuộc tính sau
       content,id
      B5: lấy thông tin người dùng nhập
-
-
       Math.random(): sẽ tạo ra 1 số ngẫu nhiên 0<= X <1 VÍ DỤ:0.24882603836712858
-     -->
+     --> <br>
+    <button onclick="deleteAll()">delete All</button>
     <ul id="jobs">
     </ul>
     <script>
@@ -34,7 +32,7 @@
         student.name = "hồng"
         // console.log("số ngẫu nhiên", Math.floor(Math.random() * 99999999));  
         // khởi tạo hàm đi thêm công việc
-        let jobs = [];
+        let jobs = JSON.parse(localStorage.getItem("jobs")) || [];
         function addJob() {
             //  console.log("đã gọi hàm!");
             let valueJob = document.getElementById("job").value;
@@ -46,38 +44,56 @@
             // sau khi có công việc rồi đi thêm vào danh sách công việc.
             jobs.push(job);
             // gọi hàm để render
-            console.log("jobs",jobs);
-             renderJob();
+            localStorage.setItem("jobs", JSON.stringify(jobs));
+            renderJob();
         }
         // tạo 1 function để hiển thị danh sách công việc
         function renderJob() {
-            let text ="";
+            let text = "";
             for (let i = 0; i < jobs.length; i++) {
                 text += `
                 <li>
                     ${jobs[i].content}
-                    <button>xóa</button>
+                    <button onclick="deleteJob(${jobs[i].id})">xóa</button>
                     <button>sửa</button>
                 </li>
     `
             }
             document.getElementById("jobs").innerHTML = text;
-            
+        }
+        renderJob();
+        // function xóa công việc
+        function deleteJob(id) {
+            // console.log("id công việc", id);
+            // duyệt mảng xem phần tử trùng id thì xóa
+            // khi xóa phải có confirm xem có muốn xóa hay không?
+            let confirmDelete = confirm("bạn có muốn xóa hay không?");
+            if (confirmDelete) {
+                // tiến hành xóa
+                for (let i = 0; i < jobs.length; i++) {
+                    if (jobs[i].id === id) {
+                        // xóa phần tử trong mảng
+                        jobs.splice(i, 1);
+                        //lưu lại
+                        localStorage.setItem("jobs", JSON.stringify(jobs));
+                        renderJob();
+                        break;
+                    }
+
+                }
+            }
+        }
+        // hàm xóa tất cả công việc
+        function deleteAll() {
+            let confirmDeleteAll = confirm("bạn có chắc chắn xóa hết công việc không?");
+            if (confirmDeleteAll) {
+                // localStorage.removeItem("jobs");
+                jobs.length = 0;
+                localStorage.setItem("jobs", JSON.stringify(jobs));
+                renderJob();
+            }
         }
 
-      
-
-        
-
-        // let students=["hoa","hồng","ngọc"];
-        // function test() {
-        //     let text="";
-        //     for (let i = 0; i < students.length; i++) {
-        //         text+=`<li>${students[i]}<li/>`
-        //     }
-        //     document.getElementById("jobs").innerHTML=text
-        // }
-        // test()
 
     </script>
 </body>
