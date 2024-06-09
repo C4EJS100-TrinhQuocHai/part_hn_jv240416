@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <form action="">
+        <input type="text">
+        <button onclick="register(event)">register</button>
+        <p>bạn đã có tài khoản <a href="./login.html">login?</a></p>
+    </form>
+    <script>
+        /* 
+            khi đăng kí email kiểm tra xem email đó đã được đăng kí hay chưa?
+         */
+        // tạo function đăng kí
+        function register(e) {
+            //   khi dùng form thì phải ngăn chặn việc submit của form
+            e.preventDefault();
+            console.log("đã gọi được hàm");
+            let myEmail = "thu1@";
+            let email = JSON.parse(localStorage.getItem("users"))||[];
+            let check = false;
+            for (let i = 0; i < email.length; i++) {
+                if (email[i] === myEmail) {
+                    // thông báo email đã có
+                    check = true;
+                    break;
+                }
+            }
+            if (check) {
+                console.log("email đã được đăng kí!");
+            } else {
+                email.push(myEmail);
+                // lưu lại trên local
+                localStorage.setItem("users", JSON.stringify(email));
+                // viết logic chuyển sang trang login 
+                window.location.href = "./login.html"
+            }
+        }
+        // đi kiểm tra cái biến check
+        // code 
+    </script>
+</body>
+
+</html>

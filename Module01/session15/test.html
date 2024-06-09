@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="jobs">
+      <!-- <div class="job">
+        <input type="checkbox">
+        <span>công việc</span>
+        <button>xóa</button>
+      </div> -->
+    </div>
+   
+    <script>
+        //  let jobs = [
+        //         {
+        //             id: 1,
+        //             name: "đá bóng",
+        //             status: false,
+        //         },
+        //         {
+        //             id: 2,
+        //             name: "cầu lông",
+        //             status: true,
+        //         },
+        //         {
+        //             id: 3,
+        //             name: "cafe",
+        //             status: false,
+        //         },
+        //         {
+        //             id: 4,
+        //             name: "code",
+        //             status: true,
+        //         }
+        //     ]
+           let jobs= JSON.parse(localStorage.getItem("jobs"))||[]
+            // function show tất cả các công việc
+            function showJob() {
+                let text="";
+                for (let i = 0; i < jobs.length; i++) {
+                    let test="";
+                    if(jobs[i].status){
+                        test+=` <s>${jobs[i].name}</s>`
+                    }else{
+                        text+=` <span>${jobs[i].name}</span>`
+                    }
+                    text+=
+                            `
+                                <div class="job">
+                                    <input type="checkbox">
+                                    ${test}
+                                    <button>xóa</button>
+                                </div> 
+                            `
+                }
+                document.getElementById("jobs").innerHTML=text;
+            }
+            showJob()
+    </script>
+</body>
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>thu</p>
+    <hr>
+    <p>long thành</p>
+    <input type="text" id="job">
+    <p id="error"></p>
+    <button onclick="addJob()">add</button>
+    <script>
+        // function đi thêm nội dung công việc
+        function addJob() {
+            let valueJob=document.getElementById("job").value;
+            if(valueJob.length==0){
+                console.log("phải nhập kí tự!");
+                document.getElementById("error").innerHTML="phải nhập tên công việc";
+                return;
+            }
+            document.getElementById("error").innerHTML="";
+        }
+        // function đi kiểm tra tiến độ công việc
+        function progressJob() {
+            // status là false tức là chưa hoàn thành công việc
+            // status là true tức là hoàn thành công việc rồi
+            let jobs=[
+                {
+                    id:1,
+                    name:"đá bóng",
+                    status:false,
+                },
+                {
+                    id: 2,
+                    name: "cầu lông",
+                    status: true,
+                },
+                 {
+                    id: 3,
+                    name: "cafe",
+                    status: false,
+                },
+                 {
+                    id: 4,
+                    name: "code",
+                    status: false,
+                }
+            ]
+            // for duyệt qua mảng job
+            let count=0;
+            for (let i = 0; i < jobs.length; i++) {
+                if(jobs[i].status==true){
+                    count++
+                }
+            }
+            // phần trăm tiến độ
+            let percent= count/(jobs.length);
+        }
+    </script>
+</body>
+</html>
